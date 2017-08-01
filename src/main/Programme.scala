@@ -12,4 +12,14 @@ object Programme {
 
   }
 
+  def findUserAndLogin(name: String, password: String)(implicit AOps: ActionOps[Actions]): Free[Actions, Boolean] = {
+    import AOps._
+
+    for {
+      u <- findUser(name)
+      loggedIn <- loginUser(u, password)
+    } yield loggedIn
+
+  }
+
 }

@@ -7,6 +7,8 @@ object DSL {
 
     def findUser(name: String): Free[F, User] = Free.inject[Actions, F](FindUser(name))
 
+    def loginUser(user: User, password: String): Free[F, Boolean] = Free.inject[Actions, F](LoginUser(user, password))
+
   }
 
   object ActionOps {
