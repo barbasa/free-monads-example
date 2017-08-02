@@ -6,4 +6,4 @@ case class LoginUser(user: User, password: String) extends Actions[Boolean]
 
 ////
 
-case class User(name: String)
+case class User(userName: String, firstName: String, lastName: String, password: String)
