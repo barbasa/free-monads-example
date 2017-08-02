@@ -1,6 +1,4 @@
 import cats.{Id, ~>}
-import cats.implicits._
-import cats.data._
 
 object Interpreter {
   type ConsoleType[A] = Id[A]
